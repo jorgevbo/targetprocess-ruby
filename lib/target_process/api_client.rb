@@ -7,7 +7,7 @@ module TargetProcess
 
     def get(path, options={})
       options.merge!(format: 'json')
-      options = {body: options}
+      options = {query: options}
       response = perform(:get, path, options)
       normalize_response(response.parsed_response)
     end
